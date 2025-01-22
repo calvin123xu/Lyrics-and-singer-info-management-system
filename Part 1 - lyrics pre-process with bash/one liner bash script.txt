@@ -1,0 +1,30 @@
+
+
+
+
+first sed: add " before :
+second sed: add "lyrics": in the upper line of the first encounter of [.*]
+the reset of sed is to add the " after :
+
+
+sed '/^Typed by:/d' bird.pak.txt | sed 's/"//g' | awk -f project | sed -re 's/(\")(.*):/\"\2\":/g' | sed -re '0,/\[(.*)\]/{s/(\[.*\])/\"Lyrics":\n\"\1/1}' | sed -re 's/(:)[ ]*(Anderson)/\1\"\2/g' | sed -re 's/(:)[ ]*(Malibu)/\1\"\2/g' | sed -re 's/(:)[ ]*(The)/\1\"\2/g' >> bird.json
+
+
+sed '/^Typed by:/d' waters.pak.txt | sed 's/"//g' | awk -f project | sed -re 's/(\")(.*):/\"\2\":/g' | sed -re '0,/\[(.*)\]/{s/(\[.*\])/\"Lyrics":\n\"\1/1}' | sed -re 's/(:)[ ]*(Anderson)/\1\"\2/g' | sed -re 's/(:)[ ]*(Malibu)/\1\"\2/g' | sed -re 's/(:)[ ]*(The)/\1\"\2/g' >> waters.json
+
+
+sed '/^Typed by:/d' lite.pak.txt | sed 's/"//g' | awk -f project | sed -re 's/(\")(.*):/\"\2\":/g' | sed -re '0,/\[(.*)\]/{s/(\[.*\])/\"Lyrics":\n\"\1/1}' | sed -re 's/(:)[ ]*(Anderson)/\1\"\2/g' | sed -re 's/(:)[ ]*(Malibu)/\1\"\2/g' | sed -re 's/(:)[ ]*(Lite)/\1\"\2/g' >> lite.json
+
+
+sed '/^Typed by:/d' amiwrong.pak.txt | sed 's/"//g' | awk -f project | sed -re 's/(\")(.*):/\"\2\":/g' | sed -re '0,/\[(.*)\]/{s/(\[.*\])/\"Lyrics":\n\"\1/1}' | sed -re 's/(:)[ ]*(Anderson)/\1\"\2/g' | sed -re 's/(:)[ ]*(Malibu)/\1\"\2/g' | sed -re 's/(:)[ ]*(Am)/\1\"\2/g' >> amiwrong.json
+
+
+sed '/^Typed by:/d' comedown.pak.txt | sed 's/"//g' | awk -f project | sed -re 's/(\")(.*):/\"\2\":/g' | sed -re '0,/\[(.*)\]/{s/(\[.*\])/\"Lyrics":\n\"\1/1}' | sed -re 's/(:)[ ]*(Anderson)/\1\"\2/g' | sed -re 's/(:)[ ]*(Malibu)/\1\"\2/g' | sed -re 's/(:)[ ]*(Come)/\1\"\2/g' >> comedown.json
+
+
+sed '/^Typed by:/d' heartdnt.pak.txt | sed 's/"//g' | awk -f project | sed -re 's/(\")(.*):/\"\2\":/g' | sed -re '0,/\[(.*)\]/{s/(\[.*\])/\"Lyrics":\n\"\1/1}' | sed -re 's/(:)[ ]*(Anderson)/\1\"\2/g' | sed -re 's/(:)[ ]*(Malibu)/\1\"\2/g' | sed -re 's/(:)[ ]*(Heart)/\1\"\2/g' >> heartdnt.json
+
+
+sed '/^Typed by:/d' tints.pak.txt | sed 's/"//g' | awk -f project | sed -re 's/(\")(.*):/\"\2\":/g' | sed -re '0,/\[(.*)\]/{s/(\[.*\])/\"Lyrics":\n\"\1/1}' | sed -re 's/(:)[ ]*(Anderson)/\1\"\2/g' | sed -re 's/(:)[ ]*(Oxnard)/\1\"\2/g' | sed -re 's/(:)[ ]*(Tints)/\1\"\2/g' >> tints.json
+
+

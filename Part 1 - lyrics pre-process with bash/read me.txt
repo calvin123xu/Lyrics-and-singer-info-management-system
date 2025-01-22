@@ -1,0 +1,1 @@
+each chunk of the one liner bash script convert each lyrics txt file to a proper json file
